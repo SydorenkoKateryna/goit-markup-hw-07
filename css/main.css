@@ -1,36 +1,4 @@
 @charset "UTF-8";
-/* Загальні стилі */
-body {
-  font-family: "Roboto", "Helvetica", "Arial", "Segoe UI", sans-serif;
-  letter-spacing: 0.03em;
-  color: #757575;
-  background-color: #ffffff;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.link {
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -43,6 +11,37 @@ img {
   -webkit-clip-path: inset(50%);
           clip-path: inset(50%);
   margin: -1px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Roboto", "Helvetica", "Arial", "Segoe UI", sans-serif;
+  letter-spacing: 0.03em;
+  color: #757575;
+  background-color: #ffffff;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .container {
@@ -74,7 +73,6 @@ img {
   cursor: pointer;
 }
 
-/* Логотип */
 .logo {
   font-family: "Raleway", "Helvetica", "Arial", "Segoe UI", sans-serif;
   font-weight: 700;

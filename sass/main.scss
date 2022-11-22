@@ -1,91 +1,10 @@
 @import "./utils/variables";
+@import "./utils/visually-hidden";
+@import "./base/reset";
+@import "./base/common";
 
-/* Загальні стилі */
-body {
-  font-family: $primaryFont;
-  letter-spacing: 0.03em;
+@import "./components/logo";
 
-  color: $primaryTextColor;
-  background-color: $primaryWhiteColor;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.link {
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
-}
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.section--inverse {
-  padding-top: 0;
-}
-
-.button {
-  font-family: inherit;
-  font-size: 16px;
-  letter-spacing: inherit;
-  text-align: center;
-
-  color: $primaryTitleColor;
-  background-color: $secondaryBackgroundColor;
-  border: 1px solid transparent;
-  border-radius: 4px;
-
-  cursor: pointer;
-}
-
-/* Логотип */
-.logo {
-  font-family: $secondaryFont;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-
-  color: $accentColor;
-}
 
 /* Шапка */
 .header {
