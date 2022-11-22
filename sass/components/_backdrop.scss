@@ -7,22 +7,16 @@
 
   opacity: 1;
   visibility: visible;
-
   transition: opacity 250ms $cubicBezier, visibility 250ms $cubicBezier;
-
   background-color: $backdropBackgroundColor;
 
   z-index: 1;
-}
 
-.backdrop--hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.backdrop--hidden .modal {
-  transform: translate(-50%, -50%) scale(0.8);
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
 }
 
 .modal {
@@ -37,13 +31,16 @@
   padding-right: 40px;
 
   transform: translate(-50%, -50%) scale(1);
-
   transition: transform 250ms $cubicBezier;
 
   border-radius: 4px;
   background-color: $primaryWhiteColor;
   box-shadow: $modalBoxShadow;
   border-radius: 4px;
+
+  .backdrop--hidden & {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
 }
 
 .modal-button {
@@ -61,13 +58,13 @@
   color: $primaryBlackColor;
   background-color: $primaryWhiteColor;
   transition: color 250ms $cubicBezier;
-}
 
-.modal-button:hover,
-.modal-button:focus {
-  color: $accentColor;
-}
+  &:hover,
+  &:focus {
+    color: $accentColor;
+  }
 
-.modal-button__icon {
-  fill: currentColor;
+  &__icon {
+    fill: currentColor;
+  }
 }

@@ -1,14 +1,16 @@
-.portfolio__list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
-}
+.portfolio {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
 
-.portfolio__item {
-  width: calc((100% - 3 * 30px) / 3);
-  margin-left: 30px;
-  margin-top: 30px;
+  &__item {
+    width: calc((100% - 3 * 30px) / 3);
+    margin-left: 30px;
+    margin-top: 30px;
+  }
 }
 
 .item-portfolio__link {
@@ -18,47 +20,56 @@
 
   box-shadow: none;
   transition: box-shadow 250ms $cubicBezier;
+
+  &:hover,
+  &:focus {
+    box-shadow: $portfolioCardShadow;
+  }
 }
 
-.item-portfolio__link:hover,
-.item-portfolio__link:focus {
-  box-shadow: $portfolioCardShadow;
-}
+.item-portfolio {
+  &__wrapper {
+    position: relative;
+    width: 370px;
+    height: 294px;
 
-.item-portfolio__meta {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 24px;
-  padding-right: 24px;
+    overflow: hidden;
+  }
 
-  background-color: $primaryWhiteColor;
+  &__desc {
+    padding: 24px;
 
-  border-bottom: 1px solid $portfolioCardBorder;
-  border-left: 1px solid $portfolioCardBorder;
-  border-right: 1px solid $portfolioCardBorder;
-}
+    font-size: 18px;
+    line-height: 1.56;
+    color: $primaryWhiteColor;
+  }
 
-.item-portfolio__title {
-  margin-bottom: 4px;
+  &__meta {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
 
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.06em;
-  color: $primaryTitleColor;
-}
+    background-color: $primaryWhiteColor;
+    border-bottom: 1px solid $portfolioCardBorder;
+    border-left: 1px solid $portfolioCardBorder;
+    border-right: 1px solid $portfolioCardBorder;
+  }
 
-.item-portfolio__text {
-  font-size: 16px;
-  line-height: 1.86;
-  color: $primaryTextColor;
-}
+  &__title {
+    margin-bottom: 4px;
 
-.item-portfolio__wrapper {
-  position: relative;
-  width: 370px;
-  height: 294px;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: $primaryTitleColor;
+  }
 
-  overflow: hidden;
+  &__text {
+    font-size: 16px;
+    line-height: 1.86;
+    color: $primaryTextColor;
+  }
 }
 
 .item-portfolio__overlay {
@@ -74,20 +85,10 @@
 
   transform: translateY(100%);
   transition: transform 250ms $cubicBezier;
-
   background-color: $overlayBackgroundColor;
-}
 
-.item-portfolio__link:hover .item-portfolio__overlay,
-.item-portfolio__link:focus .item-portfolio__overlay {
-  transform: translateY(0);
-}
-
-.item-portfolio__desc {
-  padding: 24px;
-
-  font-size: 18px;
-  line-height: 1.56;
-
-  color: $primaryWhiteColor;
+  .item-portfolio__link:hover &,
+  .item-portfolio__link:focus & {
+    transform: translateY(0);
+  }
 }

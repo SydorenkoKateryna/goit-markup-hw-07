@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
-}
 
-.button-set__item + .button-set__item {
-  margin-left: 8px;
+  &__item + &__item {
+    margin-left: 8px;
+  }
 }
 
 .portfolio-button {
@@ -17,21 +17,20 @@
 
   font-weight: 500;
   line-height: 1.63;
-
   transition: color 250ms $cubicBezier, background-color 250ms $cubicBezier,
     border-color 250ms $cubicBezier, box-shadow 250ms $cubicBezier;
-}
 
-.portfolio-button:hover,
-.portfolio-button:focus {
-  color: $primaryWhiteColor;
-  background-color: $accentColor;
-  border-color: $accentColor;
-  box-shadow: $portfolioButtonShadow;
-}
+  &:hover,
+  &:focus {
+    color: $primaryWhiteColor;
+    background-color: $accentColor;
+    border-color: $accentColor;
+    box-shadow: $portfolioButtonShadow;
+  }
 
-.portfolio-button--current {
-  color: $primaryWhiteColor;
-  background-color: $accentColor;
-  border-color: $accentColor;
+  &--current {
+    color: $primaryWhiteColor;
+    background-color: $accentColor;
+    border-color: $accentColor;
+  }
 }

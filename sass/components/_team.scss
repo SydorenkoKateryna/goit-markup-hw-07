@@ -1,61 +1,61 @@
 .team {
   background-color: $secondaryBackgroundColor;
+
+  &__title {
+    @extend %sectionTitle;
+  }
+
+  &__list {
+    display: flex;
+    margin-left: -30px;
+  }
+
+  &__item {
+    width: calc((100% - 4 * 30px) / 4);
+    margin-left: 30px;
+
+    background-color: $primaryWhiteColor;
+    box-shadow: $teamCardShadow;
+    border-radius: 0px 0px 4px 4px;
+  }
 }
 
-.team__title {
-  margin-bottom: 50px;
+.item-team {
+  &__meta {
+    padding-top: 30px;
+    padding-bottom: 30px;
 
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
+    text-align: center;
+  }
 
-  color: $primaryTitleColor;
-}
+  &__title {
+    margin-bottom: 10px;
 
-.team__list {
-  display: flex;
-  margin-left: -30px;
-}
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    color: $primaryTitleColor;
+  }
 
-.team__item {
-  width: calc((100% - 4 * 30px) / 4);
-  margin-left: 30px;
+  &__text {
+    margin-bottom: 16px;
 
-  background-color: $primaryWhiteColor;
-  box-shadow: $teamCardShadow;
-  border-radius: 0px 0px 4px 4px;
-}
-
-.item-team__meta {
-  padding-top: 30px;
-  padding-bottom: 30px;
-
-  text-align: center;
-}
-
-.item-team__title {
-  margin-bottom: 10px;
-
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.19;
-  color: $primaryTitleColor;
-}
-
-.item-team__text {
-  margin-bottom: 16px;
-
-  font-size: 16px;
-  line-height: 1.19;
+    font-size: 16px;
+    line-height: 1.19;
+  }
 }
 
 .soc-team {
   display: flex;
   justify-content: center;
-}
 
-.soc-team__item + .soc-team__item {
-  margin-left: 10px;
+  &__item + &__item {
+    margin-left: 10px;
+  }
+
+  &__icon {
+    fill: currentColor;
+  }
 }
 
 .soc-team__link {
@@ -68,16 +68,11 @@
 
   color: $iconColor;
   background-color: $primaryWhiteColor;
-
   transition: color 250ms $cubicBezier, background-color 250ms $cubicBezier;
-}
 
-.soc-team__link:hover,
-.soc-team__link:focus {
-  color: $primaryWhiteColor;
-  background-color: $accentColor;
-}
-
-.soc-team__icon {
-  fill: currentColor;
+  &:hover,
+  &:focus {
+    color: $primaryWhiteColor;
+    background-color: $accentColor;
+  }
 }

@@ -1,37 +1,51 @@
 .user-data {
   display: block;
   width: 448px;
+
+  &__text {
+    display: block;
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+    color: $primaryTitleColor;
+  }
 }
 
-.user-data__text {
-  display: block;
-  margin-bottom: 12px;
+.form-modal {
+  &__field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
 
-  font-size: 20px;
-  line-height: 23px;
-  letter-spacing: 0.03em;
-  text-align: center;
+  &__field + &__field {
+    margin-top: 10px;
+  }
 
-  color: $primaryTitleColor;
-}
+  &__label {
+    margin-bottom: 4px;
 
-.form-modal__field {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    letter-spacing: 0.01em;
+    text-align: left;
+  }
 
-.form-modal__field + .form-modal__field {
-  margin-top: 10px;
-}
+  &__wrapper {
+    position: relative;
+  }
 
-.form-modal__label {
-  margin-bottom: 4px;
-
-  font-size: 12px;
-  line-height: calc(14 / 12);
-  letter-spacing: 0.01em;
-  text-align: left;
+  &__policy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
 }
 
 .form-modal__input {
@@ -45,17 +59,17 @@
   border: 1px solid $primaryInputBorder;
   border-radius: 4px;
   background-color: $primaryWhiteColor;
-
   font-size: 12px;
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
 
   color: $primaryTitleColor;
   transition: border-color 250ms $cubicBezier;
-}
 
-.form-modal__wrapper {
-  position: relative;
+  &:focus {
+    border-color: $accentColor;
+    outline: transparent;
+  }
 }
 
 .form-modal__icon {
@@ -66,62 +80,51 @@
 
   fill: $primaryTitleColor;
   transition: fill 250ms $cubicBezier;
-}
 
-.form-modal__input:focus {
-  border-color: $accentColor;
-  outline: transparent;
-}
-
-.form-modal__input:focus + .form-modal__icon {
-  fill: $accentColor;
+  .form-modal__input:focus + & {
+    fill: $accentColor;
+  }
 }
 
 .form-modal__textarea {
   height: 120px;
   resize: none;
   padding-left: 16px;
+
+  &::placeholder {
+    color: $placeholderColor;
+  }
 }
 
-.form-modal__textarea::placeholder {
-  color: $placeholderColor;
-}
+.policy-field {
+  &__label {
+    font-size: 14px;
+    line-height: calc(24 / 14);
+    letter-spacing: 0.03em;
+  }
 
-.form-modal__policy {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
-  margin-top: 20px;
-}
-
-.policy-field__label {
-  font-size: 14px;
-  line-height: calc(24 / 14);
-  letter-spacing: 0.03em;
+  &__icon {
+    fill: currentColor;
+    stroke: currentColor;
+  }
 }
 
 .policy-field__link {
   position: relative;
   text-decoration: none;
   color: $accentColor;
-}
 
-.policy-field__link::after {
-  content: "";
-  display: block;
-  width: 112px;
-  height: 1px;
-  position: absolute;
-  top: 85%;
-  left: 0;
+  &::after {
+    content: "";
+    display: block;
+    width: 112px;
+    height: 1px;
+    position: absolute;
+    top: 85%;
+    left: 0;
 
-  background-color: $accentColor;
-}
-
-.policy-field__icon {
-  fill: currentColor;
-  stroke: currentColor;
+    background-color: $accentColor;
+  }
 }
 
 .policy-field__wrapper {
@@ -136,15 +139,14 @@
   color: transparent;
   border: 2px solid $primaryTitleColor;
   border-radius: 4px;
-
   transition: color 250ms $cubicBezier, background-color 250ms $cubicBezier,
     border-color 250ms $cubicBezier;
-}
 
-.policy-field__input:checked + .policy-field__wrapper {
-  border: none;
-  background-color: $accentColor;
-  color: $primaryWhiteColor;
+  .policy-field__input:checked + & {
+    border: none;
+    background-color: $accentColor;
+    color: $primaryWhiteColor;
+  }
 }
 
 .form-button {
@@ -166,13 +168,12 @@
   background-color: $accentColor;
   border-color: $accentColor;
   box-shadow: $formButtonShadow;
-
   transition: background-color 250ms $cubicBezier,
     border-color 250ms $cubicBezier;
-}
 
-.form-button:hover,
-.form-button:focus {
-  background-color: $formButtonColor;
-  border-color: $formButtonColor;
+  &:hover,
+  &:focus {
+    background-color: $formButtonColor;
+    border-color: $formButtonColor;
+  }
 }

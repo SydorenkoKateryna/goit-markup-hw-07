@@ -1,7 +1,6 @@
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
-
   max-width: 1600px;
   height: 600px;
   margin-left: auto;
@@ -19,21 +18,21 @@
   background-position: center;
 
   text-align: center;
-}
 
-.hero__title {
-  display: block;
-  max-width: 696px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  letter-spacing: 0.06em;
-
-  color: $primaryWhiteColor;
+  &__title {
+    display: block;
+    max-width: 696px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+  
+    color: $primaryWhiteColor;
+  }
 }
 
 .hero-button {
