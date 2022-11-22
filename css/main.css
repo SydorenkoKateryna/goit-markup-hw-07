@@ -108,14 +108,14 @@ img {
   color: #000000;
 }
 
-.site-nav {
+.nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-left: 93px;
 }
 
-.site-nav .item + .item {
+.nav__item + .nav__item {
   margin-left: 50px;
 }
 
@@ -126,12 +126,12 @@ img {
   margin-left: auto;
 }
 
-.contacts .item + .item {
+.contacts__item + .contacts__item {
   margin-left: 50px;
 }
 
-.site-nav .link,
-.contacts .link {
+.nav__link,
+.contacts__link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -146,37 +146,36 @@ img {
   letter-spacing: 0.02em;
 }
 
-.site-nav .link {
+.nav__link {
   color: #212121;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contacts .link {
+.contacts__link {
   color: inherit;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus,
-.contacts .link:hover,
-.contacts .link:focus {
+.nav__link:hover,
+.nav__link:focus,
+.contacts__link:hover,
+.contacts__link:focus {
   color: #2196f3;
 }
 
-.link.current {
+.nav__link--current {
   color: #2196f3;
   position: relative;
 }
 
-.email-icon,
-.phone-icon {
+.contacts__icon {
   margin-right: 10px;
   fill: currentColor;
 }
 
-.link.current::after {
+.nav__link--current::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -207,7 +206,7 @@ img {
   text-align: center;
 }
 
-.hero-title {
+.hero__title {
   display: block;
   max-width: 696px;
   margin-left: auto;
@@ -249,13 +248,13 @@ img {
   z-index: 1;
 }
 
-.backdrop.is-hidden {
+.backdrop--hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
 }
 
-.backdrop.is-hidden .modal {
+.backdrop--hidden .modal {
   -webkit-transform: translate(-50%, -50%) scale(0.8);
           transform: translate(-50%, -50%) scale(0.8);
 }
@@ -283,7 +282,7 @@ img {
   border-radius: 4px;
 }
 
-.button.modal-close {
+.modal-button {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -306,31 +305,31 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button.modal-close:hover,
-.button.modal-close:focus {
+.modal-button:hover,
+.modal-button:focus {
   color: #2196f3;
 }
 
-.close-icon {
+.modal-button__icon {
   fill: currentColor;
 }
 
-.modal .user-data {
+.user-data {
   display: block;
   width: 448px;
 }
 
-.user-data .text {
+.user-data__text {
   display: block;
   margin-bottom: 12px;
-  text-align: center;
   font-size: 20px;
   line-height: 23px;
   letter-spacing: 0.03em;
+  text-align: center;
   color: #212121;
 }
 
-.form-modal .form-field {
+.form-modal__field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,11 +340,11 @@ img {
   position: relative;
 }
 
-.form-modal .form-field + .form-field {
+.form-modal__field + .form-modal__field {
   margin-top: 10px;
 }
 
-.form-modal .form-label {
+.form-modal__label {
   margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.1666666667;
@@ -353,11 +352,12 @@ img {
   text-align: left;
 }
 
-.form-modal .form-input,
-.form-modal .textarea-input {
+.form-modal__input {
   width: 100%;
+  height: 40px;
   padding-top: 12px;
   padding-bottom: 12px;
+  padding-left: 42px;
   padding-right: 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -370,16 +370,11 @@ img {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-modal .form-input {
-  height: 40px;
-  padding-left: 42px;
-}
-
-.form-modal .input-wrapper {
+.form-modal__wrapper {
   position: relative;
 }
 
-.form-modal .input-icon {
+.form-modal__icon {
   position: absolute;
   top: 50%;
   left: 12px;
@@ -390,47 +385,42 @@ img {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-modal .form-input:focus {
+.form-modal__input:focus {
   border-color: #2196f3;
   outline: transparent;
 }
 
-.form-modal .form-input:focus + .input-icon {
+.form-modal__input:focus + .form-modal__icon {
   fill: #2196f3;
 }
 
-.form-modal .textarea-input {
+.form-modal__textarea {
   height: 120px;
   resize: none;
   padding-left: 16px;
 }
 
-.textarea-input::-webkit-input-placeholder {
+.form-modal__textarea::-webkit-input-placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.textarea-input::-moz-placeholder {
+.form-modal__textarea::-moz-placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.textarea-input:-ms-input-placeholder {
+.form-modal__textarea:-ms-input-placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.textarea-input::-ms-input-placeholder {
+.form-modal__textarea::-ms-input-placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.textarea-input::placeholder {
+.form-modal__textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-modal .textarea-input:focus {
-  border-color: #2196f3;
-  outline: transparent;
-}
-
-.form-modal .policy-field {
+.form-modal__policy {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -444,19 +434,19 @@ img {
   margin-top: 20px;
 }
 
-.form-modal .policy-label {
+.policy-field__label {
   font-size: 14px;
   line-height: 1.7142857143;
   letter-spacing: 0.03em;
 }
 
-.form-modal .policy-link {
+.policy-field__link {
   position: relative;
   text-decoration: none;
   color: #2196f3;
 }
 
-.form-modal .policy-link::after {
+.policy-field__link::after {
   content: "";
   display: block;
   width: 112px;
@@ -467,12 +457,12 @@ img {
   background-color: #2196f3;
 }
 
-.policy-field .agree-icon {
+.policy-field__icon {
   fill: currentColor;
   stroke: currentColor;
 }
 
-.policy-field .icon-wrapper {
+.policy-field__wrapper {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -493,7 +483,7 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.policy-field .policy-input:checked + .icon-wrapper {
+.policy-field__input:checked + .policy-field__wrapper {
   border: none;
   background-color: #2196f3;
   color: #ffffff;

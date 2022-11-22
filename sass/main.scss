@@ -108,12 +108,12 @@ img {
   color: $primaryBlackColor;
 }
 
-.site-nav {
+.nav__list {
   display: flex;
   margin-left: 93px;
 }
 
-.site-nav .item + .item {
+.nav__item + .nav__item {
   margin-left: 50px;
 }
 
@@ -122,12 +122,12 @@ img {
   margin-left: auto;
 }
 
-.contacts .item + .item {
+.contacts__item + .contacts__item {
   margin-left: 50px;
 }
 
-.site-nav .link,
-.contacts .link {
+.nav__link,
+.contacts__link {
   display: inline-flex;
   align-items: center;
 
@@ -140,37 +140,36 @@ img {
   letter-spacing: 0.02em;
 }
 
-.site-nav .link {
+.nav__link {
   color: $primaryTitleColor;
 
   transition: color 250ms $cubicBezier;
 }
 
-.contacts .link {
+.contacts__link {
   color: inherit;
 
   transition: color 250ms $cubicBezier;
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus,
-.contacts .link:hover,
-.contacts .link:focus {
+.nav__link:hover,
+.nav__link:focus,
+.contacts__link:hover,
+.contacts__link:focus {
   color: $accentColor;
 }
 
-.link.current {
+.nav__link--current {
   color: $accentColor;
   position: relative;
 }
 
-.email-icon,
-.phone-icon {
+.contacts__icon {
   margin-right: 10px;
   fill: currentColor;
 }
 
-.link.current::after {
+.nav__link--current::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -208,7 +207,7 @@ img {
   text-align: center;
 }
 
-.hero-title {
+.hero__title {
   display: block;
   max-width: 696px;
   margin-left: auto;
@@ -256,13 +255,13 @@ img {
   z-index: 1;
 }
 
-.backdrop.is-hidden {
+.backdrop--hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
 }
 
-.backdrop.is-hidden .modal {
+.backdrop--hidden .modal {
   transform: translate(-50%, -50%) scale(0.8);
 }
 
@@ -287,7 +286,7 @@ img {
   border-radius: 4px;
 }
 
-.button.modal-close {
+.modal-button {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -304,44 +303,43 @@ img {
   transition: color 250ms $cubicBezier;
 }
 
-.button.modal-close:hover,
-.button.modal-close:focus {
+.modal-button:hover,
+.modal-button:focus {
   color: $accentColor;
 }
 
-.close-icon {
+.modal-button__icon {
   fill: currentColor;
 }
 
-.modal .user-data {
+.user-data {
   display: block;
   width: 448px;
 }
 
-.user-data .text {
+.user-data__text {
   display: block;
   margin-bottom: 12px;
-
-  text-align: center;
 
   font-size: 20px;
   line-height: 23px;
   letter-spacing: 0.03em;
+  text-align: center;
 
   color: $primaryTitleColor;
 }
 
-.form-modal .form-field {
+.form-modal__field {
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.form-modal .form-field + .form-field {
+.form-modal__field + .form-modal__field {
   margin-top: 10px;
 }
 
-.form-modal .form-label {
+.form-modal__label {
   margin-bottom: 4px;
 
   font-size: 12px;
@@ -350,11 +348,12 @@ img {
   text-align: left;
 }
 
-.form-modal .form-input,
-.form-modal .textarea-input {
+.form-modal__input {
   width: 100%;
+  height: 40px;
   padding-top: 12px;
   padding-bottom: 12px;
+  padding-left: 42px;
   padding-right: 16px;
 
   border: 1px solid $primaryInputBorder;
@@ -369,16 +368,11 @@ img {
   transition: border-color 250ms $cubicBezier;
 }
 
-.form-modal .form-input {
-  height: 40px;
-  padding-left: 42px;
-}
-
-.form-modal .input-wrapper {
+.form-modal__wrapper {
   position: relative;
 }
 
-.form-modal .input-icon {
+.form-modal__icon {
   position: absolute;
   top: 50%;
   left: 12px;
@@ -388,31 +382,26 @@ img {
   transition: fill 250ms $cubicBezier;
 }
 
-.form-modal .form-input:focus {
+.form-modal__input:focus {
   border-color: $accentColor;
   outline: transparent;
 }
 
-.form-modal .form-input:focus + .input-icon {
+.form-modal__input:focus + .form-modal__icon {
   fill: $accentColor;
 }
 
-.form-modal .textarea-input {
+.form-modal__textarea {
   height: 120px;
   resize: none;
   padding-left: 16px;
 }
 
-.textarea-input::placeholder {
+.form-modal__textarea::placeholder {
   color: $placeholderColor;
 }
 
-.form-modal .textarea-input:focus {
-  border-color: $accentColor;
-  outline: transparent;
-}
-
-.form-modal .policy-field {
+.form-modal__policy {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -420,19 +409,19 @@ img {
   margin-top: 20px;
 }
 
-.form-modal .policy-label {
+.policy-field__label {
   font-size: 14px;
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
 }
 
-.form-modal .policy-link {
+.policy-field__link {
   position: relative;
   text-decoration: none;
   color: $accentColor;
 }
 
-.form-modal .policy-link::after {
+.policy-field__link::after {
   content: "";
   display: block;
   width: 112px;
@@ -444,12 +433,12 @@ img {
   background-color: $accentColor;
 }
 
-.policy-field .agree-icon {
+.policy-field__icon {
   fill: currentColor;
   stroke: currentColor;
 }
 
-.policy-field .icon-wrapper {
+.policy-field__wrapper {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -466,7 +455,7 @@ img {
     border-color 250ms $cubicBezier;
 }
 
-.policy-field .policy-input:checked + .icon-wrapper {
+.policy-field__input:checked + .policy-field__wrapper {
   border: none;
   background-color: $accentColor;
   color: $primaryWhiteColor;
