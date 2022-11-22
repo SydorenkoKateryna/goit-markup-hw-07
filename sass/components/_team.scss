@@ -1,0 +1,83 @@
+.team {
+  background-color: $secondaryBackgroundColor;
+}
+
+.team__title {
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+
+  color: $primaryTitleColor;
+}
+
+.team__list {
+  display: flex;
+  margin-left: -30px;
+}
+
+.team__item {
+  width: calc((100% - 4 * 30px) / 4);
+  margin-left: 30px;
+
+  background-color: $primaryWhiteColor;
+  box-shadow: $teamCardShadow;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.item-team__meta {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  text-align: center;
+}
+
+.item-team__title {
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  color: $primaryTitleColor;
+}
+
+.item-team__text {
+  margin-bottom: 16px;
+
+  font-size: 16px;
+  line-height: 1.19;
+}
+
+.soc-team {
+  display: flex;
+  justify-content: center;
+}
+
+.soc-team__item + .soc-team__item {
+  margin-left: 10px;
+}
+
+.soc-team__link {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+
+  color: $iconColor;
+  background-color: $primaryWhiteColor;
+
+  transition: color 250ms $cubicBezier, background-color 250ms $cubicBezier;
+}
+
+.soc-team__link:hover,
+.soc-team__link:focus {
+  color: $primaryWhiteColor;
+  background-color: $accentColor;
+}
+
+.soc-team__icon {
+  fill: currentColor;
+}

@@ -1,0 +1,45 @@
+.clients__title {
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+
+  color: $primaryTitleColor;
+}
+
+.clients__list {
+  display: flex;
+  margin-left: -30px;
+}
+
+.clients__item {
+  width: calc((100% - 6 * 30px) / 6);
+  margin-left: 30px;
+}
+
+.item-clients__link {
+  display: inline-flex;
+  width: 170px;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid $companyCardBorder;
+  border-radius: 4px;
+
+  color: $iconColor;
+  background-color: $primaryWhiteColor;
+
+  transition: color 250ms $cubicBezier, border-color 250ms $cubicBezier;
+}
+
+.item-clients__link:hover,
+.item-clients__link:focus {
+  color: $accentColor;
+  border-color: $accentColor;
+}
+
+.item-clients__icon {
+  fill: currentColor;
+}

@@ -1,0 +1,73 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition: opacity 250ms $cubicBezier, visibility 250ms $cubicBezier;
+
+  background-color: $backdropBackgroundColor;
+
+  z-index: 1;
+}
+
+.backdrop--hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop--hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  min-height: 581px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform 250ms $cubicBezier;
+
+  border-radius: 4px;
+  background-color: $primaryWhiteColor;
+  box-shadow: $modalBoxShadow;
+  border-radius: 4px;
+}
+
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  border-color: $modalButtonBorder;
+  color: $primaryBlackColor;
+  background-color: $primaryWhiteColor;
+  transition: color 250ms $cubicBezier;
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  color: $accentColor;
+}
+
+.modal-button__icon {
+  fill: currentColor;
+}
